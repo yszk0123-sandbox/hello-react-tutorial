@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloWorld from './components/HelloWorld';
+import Game from './components/Game';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 const mountElement = document.getElementById('root');
 
-ReactDOM.render(<HelloWorld />, mountElement);
+ReactDOM.render(<Game />, mountElement);
 
 registerServiceWorker();
