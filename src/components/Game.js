@@ -24,6 +24,25 @@ function calculateWinner(squares) {
   return null;
 }
 
+function getPosition(squaresA, squaresB) {
+  for (let i = 0; i < squaresA.length; i += 1) {
+    if (squaresA[i] !== squaresB[i]) {
+      return [i % 3, Math.floor(i / 3)];
+    }
+  }
+  throw new Error('Invalid format');
+}
+
+function getDesc(history, move) {
+  if (!move) {
+    return 'Game start';
+  }
+
+  const [x, y] = getPosition(history[move - 1].squares, history[move].squares);
+
+  return `Move #${move} (${x + 1}, ${y + 1})`;
+}
+
 export default class Game extends React.Component {
   constructor() {
     super();
@@ -67,11 +86,13 @@ export default class Game extends React.Component {
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
-      const desc = move ? `Move #${move}` : 'Game start';
+      const desc = getDesc(history, move);
 
       return (
         <li key={move}>
-          <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+          <a href="#" onClick={() => this.jumpTo(move)}>
+            {desc}
+          </a>
         </li>
       );
     });
