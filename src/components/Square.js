@@ -9,7 +9,7 @@ export default function Square(props) {
 
   return (
     <button className={classNames.join(' ')} onClick={props.onClick}>
-      {props.value}
+      {props.valua}
     </button>
   );
 }
