@@ -7,11 +7,13 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
+    "prettier": "^1.4.4",
     "react-scripts": "1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "format": "prettier './src/**/*.js' --write --single-quote --trailing-comma all"
   }
 }
