@@ -90,7 +90,13 @@ export default class Game extends React.Component {
 
       return (
         <li key={move}>
-          <a href="#" onClick={() => this.jumpTo(move)}>
+          <a
+            href="#"
+            onClick={() => this.jumpTo(move)}
+            style={{
+              fontWeight: move === this.state.stepNumber ? 'bold' : undefined,
+            }}
+          >
             {desc}
           </a>
         </li>
