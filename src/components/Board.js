@@ -7,7 +7,7 @@ export default class Board extends React.Component {
     return (
       <Square
         key={i}
-        value={this.props.squares[i]}
+        value={this.props.squares[i + 1]}
         hilight={winnerLine && winnerLine.includes(i)}
         onClick={() => this.props.onClick(i)}
       />
