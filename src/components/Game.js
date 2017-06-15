@@ -51,7 +51,7 @@ export default class Game extends React.Component {
       return;
     }
 
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    squares[i] = this.state.xIsNext ? 'O' : 'X';
     this.setState({
       history: history.concat([{ squares }]),
       stepNumber: history.length,
