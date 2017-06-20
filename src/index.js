@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import Game from './components/Game';
 import './index.css';
 
 const mountElement = document.getElementById('root');
 
-ReactDOM.render(<App />, mountElement);
+ReactDOM.render(<Game />, mountElement);
